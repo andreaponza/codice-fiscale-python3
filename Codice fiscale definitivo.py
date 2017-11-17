@@ -127,7 +127,7 @@ ann0="".join(ann)
 ################################
         ##COMUNE##
 
-db=open("listacomuni.txt")
+db=open("listacomuni.txt", encoding = "ISO-8859-1")
 
 lines=(db.read()).split('\n')   #divide il database in linee
 
