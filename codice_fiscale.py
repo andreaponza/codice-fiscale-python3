@@ -1,3 +1,9 @@
+###################################################
+##                                               ##
+## codice_fiscale.py - Leosxe (Pasquale Scalise) ##
+##                                               ##
+###################################################
+
 from string import digits
 
 
@@ -101,7 +107,6 @@ mdic={"01":"A","02":"E","03":"C","04":"D","05":"E","06":"H","07":"L","08":"M","0
 
 if len(mese)==1:            #Ex. trasforma i "4" in "04"
     mese="0"+mese
-    
 
 mse=mdic[mese]
 
@@ -118,7 +123,6 @@ if len(ann)==4:             #Ex. trasforma i "1978" in "78"
     del ann[1]
     del ann[0]
 
-    
 ann0="".join(ann)
 
 ################################
@@ -150,13 +154,13 @@ dpar={"A":"0","B":"1","C":"2","D":"3","E":"4","F":"5","G":"6","H":"7","I":"8","J
 
 ddis={"0":"1","1":"0","2":"5","3":"7","4":"9","5":"13","6":"15","7":"17","8":"19","9":"21","A":"1","B":"0","C":"5","D":"7","E":"9","F":"13","G":"15","H":"17","I":"19","J":"21","K":"2","L":"4","M":"18","N":"20","O":"11","P":"3","Q":"6","R":"8","S":"12","T":"14","U":"16","V":"10","W":"22","X":"25","Y":"24","Z":"23"}
 
-for i in cfo:               #IMPORTANTE: la mia fonte era Wikipedia e probabilmente c'è un errore, le tabelle pari/dispari sono invertite, quindi ho invertito i numeri pari e i dispari
+for i in cfo:               #si inizia con i dispari perché nel codice originario iniziano a contare da 1
     if var2%2==0:
         dis.append(i)
     else:
         par.append(i)
     var2+=1                    #per far fluire il ciclo for
-    
+
 for i in par:               #numeri pari
     if i not in digits:
         ctrpar=dpar[i]
